@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    signingConfigs {
+    }
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.kankanla.e560.m1028a"
         minSdkVersion 15
-        targetSdkVersion 19
-        versionCode 2
-        versionName '2.0'
+        targetSdkVersion 28
+        versionName '2.1'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 21
     }
     buildTypes {
         release {
@@ -18,7 +20,7 @@ android {
     }
     productFlavors {
     }
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '28.0.2'
 }
 
 dependencies {

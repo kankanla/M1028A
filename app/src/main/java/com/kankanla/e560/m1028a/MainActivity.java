@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 start_dialog.hide();
             }
         }, 5000);
+
     }
 
     @Override
