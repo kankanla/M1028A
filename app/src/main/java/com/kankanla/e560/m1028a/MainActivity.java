@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.List;
 import java.util.Timer;
@@ -210,6 +211,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     protected void admo() {
+        MobileAds.initialize(this, getString(R.string.admob_APP_ID));
 //        xmlns:ads="http://schemas.android.com/apk/res-auto"
         ViewGroup viewGroup = (ViewGroup) findViewById(R.id.admin_layout);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
