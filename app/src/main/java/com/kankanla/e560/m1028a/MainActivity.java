@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onStart() {
         super.onStart();
-        admo();     //広告
         start_dialog = new start_Dialog(this);
         handler.postDelayed(new Runnable() {
             @Override
@@ -97,12 +96,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 start_dialog.hide();
             }
         }, 5000);
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        admo();
         if (fund_light_sensor) {
             //ルーメン値の表示 600s間隔
             timerTask = new TimerTask() {
@@ -212,7 +211,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     protected void admo() {
         MobileAds.initialize(this, getString(R.string.admob_APP_ID));
-//        xmlns:ads="http://schemas.android.com/apk/res-auto"
         ViewGroup viewGroup = (ViewGroup) findViewById(R.id.admin_layout);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         AdView adView = new AdView(this);
@@ -220,7 +218,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         adView.setLayoutParams(layoutParams);
         layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//        adView.setAdSize(AdSize.BANNER);
         adView.setAdSize(AdSize.FULL_BANNER);
         adView.setAdUnitId(getString(R.string.admob_1));
 
@@ -232,7 +229,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         adView.loadAd(adRequest);
         viewGroup.addView(adView);
     }
-
 
     class start_Dialog extends AlertDialog {
         protected start_Dialog(Context context) {
