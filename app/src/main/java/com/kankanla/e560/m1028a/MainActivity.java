@@ -224,6 +224,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         AdRequest.Builder builder = new AdRequest.Builder();
         builder.addTestDevice(getString(R.string.addTestDeviceH));
         builder.addTestDevice(getString(R.string.addTestDeviceASUS));
+        builder.addTestDevice(getString(R.string.addTestDeviceMI));
         AdRequest adRequest = builder.build();
 
         adView.loadAd(adRequest);
